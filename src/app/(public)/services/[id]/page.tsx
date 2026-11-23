@@ -34,7 +34,6 @@ export default async function ServiceDetails({ params }: { params: { id: string 
       <div className="grid gap-8 lg:grid-cols-3">
         <div className="space-y-8 lg:col-span-2">
           <div className="card overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={s.image} alt={s.title} className="aspect-[16/9] w-full object-cover" />
             <div className="p-6 sm:p-8">
               <span className="badge bg-brand-50 text-brand-800 ring-brand-600/20">{s.category}</span>
