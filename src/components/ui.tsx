@@ -67,7 +67,6 @@ export function ErrorBox({ message, onRetry }: { message: string; onRetry?: () =
   );
 }
 
-/** Responsive table wrapper */
 export const TableWrap = ({ children }: { children: ReactNode }) => (
   <div className="card overflow-hidden"><div className="overflow-x-auto"><table className="min-w-full divide-y divide-slate-100">{children}</table></div></div>
 );

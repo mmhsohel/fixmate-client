@@ -35,7 +35,7 @@ export async function api<T = any>(path: string, { method = 'GET', body, auth = 
   return data as T;
 }
 
-/** Next.js server → Express API (public endpoints only). */
+
 export async function serverApi<T = any>(path: string): Promise<T | null> {
   const base = process.env.API_INTERNAL_URL || PUBLIC_API;
   try {
