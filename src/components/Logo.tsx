@@ -7,7 +7,7 @@ export default function Logo({ light = false }: { light?: boolean }) {
       <span
         className={`inline-flex items-center rounded-xl transition ${
           light
-            ? 'bg-white px-2.5 py-1.5 shadow-sm'
+            ? 'bg-white px-2.5 py-1.6 shadow-sm'
             : 'dark:bg-white/95 dark:px-2.5 dark:py-1.5'
         }`}
       >
