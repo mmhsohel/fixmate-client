@@ -41,7 +41,7 @@ export default function Hero() {
             Are you a technician? Join FixMate →
           </Link>
         </div>
-//hero image
+
         <div className="mx-auto w-full max-w-lg">
           <div className="overflow-hidden rounded-3xl border border-white/15 bg-ink-800/70 p-2 shadow-2xl ring-1 ring-brand-400/20">
             <Image
