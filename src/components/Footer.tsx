@@ -13,8 +13,22 @@ export default function Footer() {
           <Image src="/images/logo.png" alt="Illustration" width={160} height={160} className="mt-5" />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">Verified technicians, transparent job tracking and pay-after-service. Repairs made simple.</p>
           <div className="mt-5 flex gap-3">
-            {[{ I: XIcon, l: 'X' }, { I: FacebookIcon, l: 'Facebook' }, { I: InstagramIcon, l: 'Instagram' }, { I: LinkedinIcon, l: 'LinkedIn' }].map(({ I, l }) => (
-              <a key={l} href="#" aria-label={l} className="grid h-9 w-9 place-items-center rounded-lg bg-white/10 text-white transition hover:bg-accent-500"><I className="h-4 w-4" /></a>
+            {[
+              { I: XIcon, l: 'X', href: 'https://x.com' },
+              { I: FacebookIcon, l: 'Facebook', href: 'https://facebook.com' },
+              { I: InstagramIcon, l: 'Instagram', href: 'https://instagram.com' },
+              { I: LinkedinIcon, l: 'LinkedIn', href: 'https://linkedin.com' },
+            ].map(({ I, l, href }) => (
+              <a
+                key={l}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={l}
+                className="grid h-9 w-9 place-items-center rounded-lg bg-white/10 text-white transition hover:bg-accent-500"
+              >
+                <I className="h-4 w-4" />
+              </a>
             ))}
           </div>
         </div>
