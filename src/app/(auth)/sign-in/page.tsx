@@ -62,7 +62,7 @@ export default function SignIn() {
       <p className="mt-6 text-center text-sm text-slate-500">New to FixMate? <Link href="/sign-up" className="font-semibold text-brand-700 hover:underline">Create an account</Link></p>
       <div className="mt-6 rounded-xl bg-slate-100 p-4 text-xs text-slate-500">
         <p className="mb-1 font-semibold text-slate-700">Demo accounts</p>
-        <p>Admin: admin@fixmate.com / Admin@123</p><p>Technician: rafiq@fixmate.com / Tech@1234</p><p>Customer: customer@fixmate.com / Customer@123</p>
+        <p>Admin: admin@gmail.com / Ab1234</p><p>Technician: technician@gmail.com / Ab1234</p><p>Customer: customer@gmail.com / Ab1234</p>
       </div>
     </>
   );
