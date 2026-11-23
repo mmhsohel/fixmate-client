@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next';
 import { Toaster } from 'sonner';
-// @ts-expect-error CSS is processed by Next.js and has no TypeScript module declaration.
 import './globals.css';
 
 export const metadata: Metadata = {
