@@ -5,6 +5,7 @@ import { CATEGORIES } from '@/lib/constants';
 import Image from 'next/image';
 
 export default function Footer() {
+  {/* 3. Hero banner with search bar and primary technician CTA */}
   return (
     <footer className="bg-ink-700 text-slate-300">
       <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
