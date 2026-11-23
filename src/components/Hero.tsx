@@ -3,7 +3,9 @@ import Image from 'next/image';
 import { BadgeCheck, Search, ShieldCheck, Wallet } from 'lucide-react';
 
 export default function Hero() {
+  {/* 3. Hero banner with search bar and primary technician CTA */}
   return (
+    
     <section className="relative overflow-hidden bg-gradient-to-br from-ink-900 via-ink-800 to-brand-900 text-white">
       <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-brand-500/20 blur-3xl" />
       <div className="container-x relative grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
