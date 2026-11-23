@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Mail, MapPin, Phone } from 'lucide-react';
-import Logo from './Logo';
 import { FacebookIcon, InstagramIcon, LinkedinIcon, XIcon } from './Icons';
 import { CATEGORIES } from '@/lib/constants';
 import Image from 'next/image';
