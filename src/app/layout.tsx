@@ -4,13 +4,26 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: { default: 'FixMate – Trusted Device & Home Appliance Repair', template: '%s | FixMate' },
-  description: 'Book verified technicians for smartphone, laptop, AC, refrigerator, TV, washing machine and electrical repairs. Track every job and pay only after the work is done.',
+  description:
+    'Book verified technicians for smartphone, laptop, AC, refrigerator, TV, washing machine and electrical repairs. Track every job and pay only after the work is done.',
 };
+
 export const viewport: Viewport = { themeColor: '#0f766e' };
+
+const themeInitScript = `
+  try {
+    const t = localStorage.getItem('fixmate-theme');
+    const d = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (d) document.documentElement.classList.add('dark');
+  } catch (_) {}
+`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         {children}
         <Toaster position="top-right" richColors closeButton />

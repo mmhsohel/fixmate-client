@@ -3,30 +3,193 @@
 @tailwind utilities;
 
 @layer base {
-  html { scroll-behavior: smooth; }
-  body { @apply bg-slate-50 text-slate-700 antialiased; font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
-  h1, h2, h3, h4 { @apply text-ink-900 font-bold tracking-tight; }
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-700 antialiased transition-colors duration-200;
+    font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-bold tracking-tight text-ink-900;
+  }
+}
+
+html.dark body {
+  @apply bg-ink-900 text-slate-300;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4 {
+  @apply text-white;
 }
 
 @layer components {
-  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
-  .section { @apply py-16 sm:py-20; }
-  .section-title { @apply text-3xl sm:text-4xl font-extrabold text-ink-900; }
-  .section-sub { @apply mt-3 max-w-2xl text-base text-slate-500; }
-  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50; }
-  .btn-primary { @apply btn bg-brand-700 text-white shadow-sm hover:bg-brand-800; }
-  .btn-accent { @apply btn bg-accent-500 text-white shadow-sm hover:bg-accent-600; }
-  .btn-outline { @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50; }
-  .btn-danger { @apply btn bg-red-600 text-white hover:bg-red-700; }
-  .btn-ghost { @apply btn text-slate-600 hover:bg-slate-100; }
-  .btn-sm { @apply px-3 py-1.5 text-xs; }
-  .card { @apply rounded-2xl border border-slate-200 bg-white shadow-card; }
-  .label { @apply mb-1.5 block text-sm font-medium text-slate-700; }
-  .input { @apply w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/25 disabled:bg-slate-100 disabled:text-slate-500; }
-  .field-error { @apply mt-1 text-xs font-medium text-red-600; }
-  .badge { @apply inline-flex items-center whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset; }
-  .th { @apply whitespace-nowrap bg-slate-50 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500; }
-  .td { @apply px-4 py-3 align-middle text-sm; }
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 sm:py-20;
+  }
+
+  .section-title {
+    @apply text-3xl font-extrabold text-ink-900 sm:text-4xl;
+  }
+
+  .section-sub {
+    @apply mt-3 max-w-2xl text-base text-slate-500;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-700 text-white shadow-sm hover:bg-brand-800;
+  }
+
+  .btn-accent {
+    @apply btn bg-accent-500 text-white shadow-sm hover:bg-accent-600;
+  }
+
+  .btn-outline {
+    @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700;
+  }
+
+  .btn-ghost {
+    @apply btn text-slate-600 hover:bg-slate-100;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-card transition-colors duration-200;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-slate-700;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/25 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-500;
+  }
+
+  .field-error {
+    @apply mt-1 text-xs font-medium text-red-600;
+  }
+
+  .badge {
+    @apply inline-flex items-center whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset;
+  }
+
+  .th {
+    @apply whitespace-nowrap bg-slate-50 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-slate-500;
+  }
+
+  .td {
+    @apply px-4 py-3 align-middle text-sm text-slate-700;
+  }
 }
 
-.skeleton { @apply animate-pulse rounded-lg bg-slate-200; }
+html.dark .section-title,
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4 {
+  color: #ffffff;
+}
+
+html.dark .section-sub {
+  color: #94a3b8;
+}
+
+html.dark .btn-primary {
+  background-color: #0d9488;
+}
+
+html.dark .btn-primary:hover {
+  background-color: #14b8a6;
+}
+
+html.dark .btn-outline {
+  border-color: #334155;
+  background-color: #12293a;
+  color: #e2e8f0;
+}
+
+html.dark .btn-outline:hover {
+  background-color: #1e3a4c;
+}
+
+html.dark .btn-ghost {
+  color: #cbd5e1;
+}
+
+html.dark .btn-ghost:hover {
+  background-color: #12293a;
+}
+
+html.dark .card {
+  border-color: #1e293b;
+  background-color: #12293a;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 28px -12px rgba(0, 0, 0, 0.55);
+}
+
+html.dark .label {
+  color: #cbd5e1;
+}
+
+html.dark .input {
+  border-color: #334155;
+  background-color: #0b1b2b;
+  color: #f1f5f9;
+}
+
+html.dark .input::placeholder {
+  color: #64748b;
+}
+
+html.dark .input:disabled {
+  background-color: #12293a;
+  color: #64748b;
+}
+
+html.dark .field-error {
+  color: #f87171;
+}
+
+html.dark .th {
+  background-color: rgba(11, 27, 43, 0.7);
+  color: #94a3b8;
+}
+
+html.dark .td {
+  color: #cbd5e1;
+}
+
+.skeleton {
+  @apply animate-pulse rounded-lg bg-slate-200;
+}
+
+html.dark .skeleton {
+  background-color: #1e293b;
+}
