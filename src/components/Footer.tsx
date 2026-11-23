@@ -3,13 +3,14 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import Logo from './Logo';
 import { FacebookIcon, InstagramIcon, LinkedinIcon, XIcon } from './Icons';
 import { CATEGORIES } from '@/lib/constants';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-ink-900 text-slate-300">
+    <footer className="bg-ink-700 text-slate-300">
       <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Logo light />
+          <Image src="/images/logo.png" alt="Illustration" width={160} height={160} className="mt-5" />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">Verified technicians, transparent job tracking and pay-after-service. Repairs made simple.</p>
           <div className="mt-5 flex gap-3">
             {[{ I: XIcon, l: 'X' }, { I: FacebookIcon, l: 'Facebook' }, { I: InstagramIcon, l: 'Instagram' }, { I: LinkedinIcon, l: 'LinkedIn' }].map(({ I, l }) => (
