@@ -2,7 +2,6 @@
 import { authClient } from '@/lib/auth-client';
 import { GoogleIcon } from './Icons';
 
-/** Rendered only when NEXT_PUBLIC_GOOGLE_ENABLED=true and Google keys are configured. */
 export default function SocialLogin() {
   if (process.env.NEXT_PUBLIC_GOOGLE_ENABLED == 'true') return null;
   return (
